@@ -157,7 +157,46 @@ export const HomePage = () => {
           <p className="text-bodySmall font-light md:text-bodyMedium">
             Jelajahi Dunia Pengetahuan Melalui Pilihan Kami!
           </p>
-          <ul className="mt-5 flex flex-row gap-10">
+          <ul
+            className="scrollbar-hide mt-5 flex touch-pan-x flex-row gap-10 overflow-x-auto overflow-y-hidden"
+            style={{ WebkitOverflowScrolling: "touch" }}
+            onMouseDown={(e) => {
+              const ul = e.currentTarget;
+              let isDown = true;
+              let startX = e.pageX - ul.offsetLeft;
+              let scrollLeft = ul.scrollLeft;
+              const onMouseMove = (ev: MouseEvent) => {
+                if (!isDown) return;
+                ev.preventDefault();
+                const x = ev.pageX - ul.offsetLeft;
+                const walk = (x - startX) * 1.5; //scroll-fast
+                ul.scrollLeft = scrollLeft - walk;
+              };
+              const onMouseUp = () => {
+                isDown = false;
+                window.removeEventListener("mousemove", onMouseMove);
+                window.removeEventListener("mouseup", onMouseUp);
+              };
+              window.addEventListener("mousemove", onMouseMove);
+              window.addEventListener("mouseup", onMouseUp);
+            }}
+            onTouchStart={(e) => {
+              const ul = e.currentTarget;
+              let startX = e.touches[0].pageX;
+              let scrollLeft = ul.scrollLeft;
+              const onTouchMove = (ev: TouchEvent) => {
+                const x = ev.touches[0].pageX;
+                const walk = (x - startX) * 1.5;
+                ul.scrollLeft = scrollLeft - walk;
+              };
+              const onTouchEnd = () => {
+                window.removeEventListener("touchmove", onTouchMove);
+                window.removeEventListener("touchend", onTouchEnd);
+              };
+              window.addEventListener("touchmove", onTouchMove);
+              window.addEventListener("touchend", onTouchEnd);
+            }}
+          >
             {["Semua Kelas", "Pemasaran", "Desain", "Pengembangan Diri", "Bisnis"].map(
               (category) => (
                 <li
