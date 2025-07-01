@@ -9,7 +9,7 @@
 }
 
 .px-standard {
-  @apply px-6 md:px-32;
+  @apply px-6 md:px-44;
 }
 
 .shadow {

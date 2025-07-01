@@ -14,6 +14,10 @@ const variantStyles = {
     backgroundColor: "white",
     color: "#4a505c",
   },
+  quaternary: {
+    backgroundColor: "#ffbd3a",
+    color: "white",
+  },
 };
 
 export const ButtonComponent: React.FC<ButtonProps> = ({
