@@ -1,5 +1,5 @@
 export type Variant = "login" | "register";
-export type ButtonVariant = "primary" | "secondary" | "tertiary";
+export type ButtonVariant = "primary" | "secondary" | "tertiary" | "quaternary";
 export type InputType = "text" | "email" | "password" | "phone";
 
 export type LoginFormValues = {
