@@ -1,3 +1,4 @@
+export type Variant = "login" | "register";
 export type ButtonVariant = "primary" | "secondary" | "tertiary";
 export type InputType = "text" | "email" | "password" | "phone";
 
@@ -12,8 +13,13 @@ export type StarRatingProps = {
 };
 
 export type RegisterFormValues = {
-  nama: string;
+  name: string;
   email: string;
+  phone: string;
   password: string;
   passwordConfirmation: string;
+};
+
+export type Props = {
+  variant?: Variant;
 };

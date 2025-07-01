@@ -1,29 +1,16 @@
 import type { FormProps } from "../utils/interfaces";
+import type { LoginFormValues, Props, RegisterFormValues, Variant } from "../utils/types";
 import { ButtonComponent } from "./ui/button";
 import { DividerUI } from "./ui/divider";
 import { EmailInput, PasswordInput, PhoneInput, TextInput } from "./ui/input";
 import { useForm } from "react-hook-form";
 
-type Variant = "login" | "register";
-
-type LoginFormValues = {
-  email: string;
-  password: string;
-};
-
-type RegisterFormValues = {
-  name: string;
-  email: string;
-  phone: string;
-  password: string;
-  passwordConfirmation: string;
-};
-
-type Props = {
-  variant?: Variant;
-} & FormProps;
-
-export const FormComponent = ({ className = "", onSubmit, variant = "login", ...props }: Props) => {
+export const FormComponent = ({
+  className = "",
+  onSubmit,
+  variant = "login",
+  ...props
+}: Props & FormProps) => {
   const {
     register,
     handleSubmit,

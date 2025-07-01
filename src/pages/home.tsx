@@ -137,7 +137,7 @@ export const HomePage = () => {
             src="/assets/hero.jpg"
             className="absolute z-10 h-full w-full overflow-hidden rounded-xl object-cover brightness-[.3]"
           />
-          <div className="flex w-full flex-col items-center justify-center gap-5 px-4 py-10 md:px-40">
+          <div className="flex w-full flex-col items-center justify-center gap-5 px-4 py-10 md:px-20 lg:px-40">
             <h1 className="z-20 text-center text-heading3 font-bold text-white md:text-heading1">
               Revolusi Pembelajaran: Temukan Ilmu Baru melalui Platform Video Interaktif!
             </h1>
@@ -242,8 +242,8 @@ export const HomePage = () => {
             src="/assets/hero.jpg"
             className="absolute z-10 h-full w-full overflow-hidden rounded-xl object-cover brightness-[.3]"
           />
-          <div className="flex w-full flex-col items-center justify-center gap-5 px-4 py-10 md:px-40">
-            <h6>NEWSLETTER</h6>
+          <div className="flex w-full flex-col items-center justify-center gap-5 px-4 py-10 md:px-10 lg:px-40">
+            <h6 className="z-10 text-white">NEWSLETTER</h6>
             <h1 className="z-20 text-center text-heading3 font-bold text-white md:text-heading1">
               Mau Belajar Lebih Banyak?
             </h1>
