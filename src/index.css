@@ -568,8 +568,8 @@ video {
   left: -2.5rem;
 }
 
-.-left-40{
-  left: -10rem;
+.-left-44{
+  left: -11rem;
 }
 
 .right-3{
@@ -586,10 +586,6 @@ video {
 
 .top-full{
   top: 100%;
-}
-
-.-left-44{
-  left: -11rem;
 }
 
 .z-10{
@@ -637,16 +633,20 @@ video {
   margin-bottom: 1.25rem;
 }
 
+.mb-3{
+  margin-bottom: 0.75rem;
+}
+
 .mb-5{
   margin-bottom: 1.25rem;
 }
 
-.mr-3{
-  margin-right: 0.75rem;
+.ml-1{
+  margin-left: 0.25rem;
 }
 
-.mr-5{
-  margin-right: 1.25rem;
+.mr-3{
+  margin-right: 0.75rem;
 }
 
 .mt-1{
@@ -697,6 +697,10 @@ video {
   height: 2.5rem;
 }
 
+.h-3{
+  height: 0.75rem;
+}
+
 .h-5{
   height: 1.25rem;
 }
@@ -711,6 +715,10 @@ video {
 
 .h-\[15px\]{
   height: 15px;
+}
+
+.h-\[18px\]{
+  height: 18px;
 }
 
 .h-\[200px\]{
@@ -754,6 +762,10 @@ video {
   width: 5rem;
 }
 
+.w-3{
+  width: 0.75rem;
+}
+
 .w-5{
   width: 1.25rem;
 }
@@ -764,6 +776,10 @@ video {
 
 .w-\[18px\]{
   width: 18px;
+}
+
+.w-\[20px\]{
+  width: 20px;
 }
 
 .w-\[85px\]{
@@ -788,6 +804,14 @@ video {
 
 .max-w-40{
   max-width: 10rem;
+}
+
+.max-w-60{
+  max-width: 15rem;
+}
+
+.max-w-80{
+  max-width: 20rem;
 }
 
 .max-w-96{
@@ -959,6 +983,11 @@ video {
   border-top-width: 1px;
 }
 
+.border-\[\#3ECF4C\]{
+  --tw-border-opacity: 1;
+  border-color: rgb(62 207 76 / var(--tw-border-opacity, 1));
+}
+
 .border-gray-200{
   --tw-border-opacity: 1;
   border-color: rgb(229 231 235 / var(--tw-border-opacity, 1));
@@ -972,6 +1001,10 @@ video {
 .border-red-500{
   --tw-border-opacity: 1;
   border-color: rgb(239 68 68 / var(--tw-border-opacity, 1));
+}
+
+.bg-\[\#E2FCD9CC\]{
+  background-color: #E2FCD9CC;
 }
 
 .bg-\[\#f4f5fa\]{
@@ -991,6 +1024,10 @@ video {
 
 .p-4{
   padding: 1rem;
+}
+
+.p-5{
+  padding: 1.25rem;
 }
 
 .p-7{
@@ -1134,6 +1171,10 @@ video {
 
 .font-normal{
   font-weight: 400;
+}
+
+.text-\[\#3A3541AD\]{
+  color: #3A3541AD;
 }
 
 .text-\[\#3ECF4C\]{
@@ -1309,6 +1350,11 @@ footer {
   background-color: rgb(241 245 249 / var(--tw-bg-opacity, 1));
 }
 
+.hover\:text-\[\#3ECF4C\]:hover{
+  --tw-text-opacity: 1;
+  color: rgb(62 207 76 / var(--tw-text-opacity, 1));
+}
+
 .hover\:text-gray-600:hover{
   --tw-text-opacity: 1;
   color: rgb(75 85 99 / var(--tw-text-opacity, 1));
@@ -1317,10 +1363,6 @@ footer {
 .hover\:text-red-600:hover{
   --tw-text-opacity: 1;
   color: rgb(220 38 38 / var(--tw-text-opacity, 1));
-}
-
-.hover\:underline:hover{
-  text-decoration-line: underline;
 }
 
 .hover\:opacity-80:hover{

@@ -11,7 +11,13 @@ export type StarRatingProps = {
   rating: number;
   size?: number;
 };
-
+export type CategoryProps = {
+  width?: string;
+  title: React.ReactNode;
+  titleClassName?: string;
+  content: Record<string, React.ReactNode>;
+  contentClassName?: string;
+};
 export type RegisterFormValues = {
   name: string;
   email: string;
