@@ -1,13 +1,17 @@
+import { useRef } from "react";
 import { ButtonComponent } from "../components/ui/button";
 import { DividerUI } from "../components/ui/divider";
 import { TextInput } from "../components/ui/input";
 import { StarRatingUi } from "../components/ui/stars";
 import { DefaultLayout } from "../layouts/default";
 import { HeaderLayout } from "../layouts/header";
+import { mousePointerTracking, touchTracking } from "../utils/funtions";
 import { useIsMobile } from "../utils/useIsMobile";
+import { FooterLayout } from "../layouts/footer";
 
 export const HomePage = () => {
   const isMobile = useIsMobile();
+  const ulRef = useRef<HTMLUListElement>(null);
   const contents = [
     {
       id: 1,
@@ -160,41 +164,16 @@ export const HomePage = () => {
           <ul
             className="scrollbar-hide mt-5 flex touch-pan-x flex-row gap-10 overflow-x-auto overflow-y-hidden"
             style={{ WebkitOverflowScrolling: "touch" }}
+            ref={ulRef}
             onMouseDown={(e) => {
-              const ul = e.currentTarget;
-              let isDown = true;
-              let startX = e.pageX - ul.offsetLeft;
-              let scrollLeft = ul.scrollLeft;
-              const onMouseMove = (ev: MouseEvent) => {
-                if (!isDown) return;
-                ev.preventDefault();
-                const x = ev.pageX - ul.offsetLeft;
-                const walk = (x - startX) * 1.5; //scroll-fast
-                ul.scrollLeft = scrollLeft - walk;
-              };
-              const onMouseUp = () => {
-                isDown = false;
-                window.removeEventListener("mousemove", onMouseMove);
-                window.removeEventListener("mouseup", onMouseUp);
-              };
-              window.addEventListener("mousemove", onMouseMove);
-              window.addEventListener("mouseup", onMouseUp);
+              if (ulRef.current) {
+                mousePointerTracking(e.nativeEvent, ulRef.current);
+              }
             }}
             onTouchStart={(e) => {
-              const ul = e.currentTarget;
-              let startX = e.touches[0].pageX;
-              let scrollLeft = ul.scrollLeft;
-              const onTouchMove = (ev: TouchEvent) => {
-                const x = ev.touches[0].pageX;
-                const walk = (x - startX) * 1.5;
-                ul.scrollLeft = scrollLeft - walk;
-              };
-              const onTouchEnd = () => {
-                window.removeEventListener("touchmove", onTouchMove);
-                window.removeEventListener("touchend", onTouchEnd);
-              };
-              window.addEventListener("touchmove", onTouchMove);
-              window.addEventListener("touchend", onTouchEnd);
+              if (ulRef.current) {
+                touchTracking(e.nativeEvent, ulRef.current);
+              }
             }}
           >
             {["Semua Kelas", "Pemasaran", "Desain", "Pengembangan Diri", "Bisnis"].map(
@@ -302,6 +281,7 @@ export const HomePage = () => {
           </div>
         </div>
       </div>
+      <FooterLayout />
     </>
   );
 };

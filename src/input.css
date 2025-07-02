@@ -16,7 +16,25 @@
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-header {
+.circle {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: #eee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border: 2px solid #ccc;
+}
+
+.circle img {
+  width: 35%;
+  height: auto;
+}
+
+header,
+footer {
   @apply px-standard sticky top-0 z-50 flex flex-row items-center justify-between bg-white py-3 shadow;
 }
 
