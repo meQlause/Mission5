@@ -1,33 +1,34 @@
 import { CategoryComponent } from "../components/category";
 import { DividerUI } from "../components/ui/divider";
 
+const perusahaanContent: Record<string, string>[] = [
+  {
+    "Tentang Kami": "#",
+    FAQ: "#",
+    "Kebijakan Privasi": "#",
+    "Ketentuan Layanan": "#",
+    Bantuan: "#",
+  },
+];
+
+const kategoriContent: Record<string, string>[] = [
+  {
+    "Digital & Teknologi": "#",
+    Pemasaran: "#",
+    "Manajemen Bisnis": "#",
+    "Pengembangan Diri": "#",
+    Desain: "#",
+  },
+];
+
+const komunitasContent: Record<string, string>[] = [
+  {
+    "Tips Sukses": "#",
+    Blog: "#",
+  },
+];
+
 export const FooterLayout = () => {
-  const perusahaanContent: Record<string, string>[] = [
-    {
-      "Tentang Kami": "#",
-      FAQ: "#",
-      "Kebijakan Privasi": "#",
-      "Ketentuan Layanan": "#",
-      Bantuan: "#",
-    },
-  ];
-
-  const kategoriContent: Record<string, string>[] = [
-    {
-      "Digital & Teknologi": "#",
-      Pemasaran: "#",
-      "Manajemen Bisnis": "#",
-      "Pengembangan Diri": "#",
-      Desain: "#",
-    },
-  ];
-
-  const komunitasContent: Record<string, string>[] = [
-    {
-      "Tips Sukses": "#",
-      Blog: "#",
-    },
-  ];
   return (
     <footer className="flex flex-col pt-10">
       <div className="flex w-full flex-col justify-between gap-5 pb-3 md:flex-row md:pb-7">
