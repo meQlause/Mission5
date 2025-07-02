@@ -584,6 +584,10 @@ video {
   z-index: 20;
 }
 
+.m-0{
+  margin: 0px;
+}
+
 .m-auto{
   margin: auto;
 }
@@ -754,11 +758,6 @@ video {
   width: 100%;
 }
 
-.w-fit{
-  width: -moz-fit-content;
-  width: fit-content;
-}
-
 .max-w-28{
   max-width: 7rem;
 }
@@ -777,10 +776,6 @@ video {
 
 .max-w-\[400px\]{
   max-width: 400px;
-}
-
-.max-w-20{
-  max-width: 5rem;
 }
 
 .-translate-y-1\/2{
@@ -891,10 +886,6 @@ video {
 
 .overflow-y-hidden{
   overflow-y: hidden;
-}
-
-.whitespace-nowrap{
-  white-space: nowrap;
 }
 
 .rounded-lg{
@@ -1276,6 +1267,10 @@ footer {
   color: rgb(220 38 38 / var(--tw-text-opacity, 1));
 }
 
+.hover\:underline:hover{
+  text-decoration-line: underline;
+}
+
 .hover\:opacity-80:hover{
   opacity: 0.8;
 }
@@ -1300,15 +1295,6 @@ footer {
 }
 
 @media (min-width: 768px){
-  .md\:my-0{
-    margin-top: 0px;
-    margin-bottom: 0px;
-  }
-
-  .md\:mb-5{
-    margin-bottom: 1.25rem;
-  }
-
   .md\:mt-5{
     margin-top: 1.25rem;
   }
@@ -1329,12 +1315,12 @@ footer {
     width: 600px;
   }
 
-  .md\:flex-row{
-    flex-direction: row;
+  .md\:cursor-default{
+    cursor: default;
   }
 
-  .md\:flex-col{
-    flex-direction: column;
+  .md\:flex-row{
+    flex-direction: row;
   }
 
   .md\:items-start{
@@ -1349,8 +1335,8 @@ footer {
     justify-content: space-between;
   }
 
-  .md\:gap-10{
-    gap: 2.5rem;
+  .md\:gap-3{
+    gap: 0.75rem;
   }
 
   .md\:whitespace-nowrap{

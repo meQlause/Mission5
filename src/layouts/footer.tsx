@@ -1,6 +1,33 @@
+import { CategoryComponent } from "../components/category";
 import { DividerUI } from "../components/ui/divider";
 
 export const FooterLayout = () => {
+  const perusahaanContent: Record<string, string>[] = [
+    {
+      "Tentang Kami": "#",
+      FAQ: "#",
+      "Kebijakan Privasi": "#",
+      "Ketentuan Layanan": "#",
+      Bantuan: "#",
+    },
+  ];
+
+  const kategoriContent: Record<string, string>[] = [
+    {
+      "Digital & Teknologi": "#",
+      Pemasaran: "#",
+      "Manajemen Bisnis": "#",
+      "Pengembangan Diri": "#",
+      Desain: "#",
+    },
+  ];
+
+  const komunitasContent: Record<string, string>[] = [
+    {
+      "Tips Sukses": "#",
+      Blog: "#",
+    },
+  ];
   return (
     <footer className="flex flex-col pt-10">
       <div className="flex w-full flex-col justify-between gap-5 pb-3 md:flex-row md:pb-7">
@@ -16,57 +43,10 @@ export const FooterLayout = () => {
             <p className="text-bodyMedium font-medium">+62-877-7123-1234</p>
           </div>
         </div>
-        <div className="my-5 flex flex-col gap-10 md:my-0 md:flex-row md:gap-10">
-          <ul className="flex w-full flex-row items-center justify-between md:flex-col md:items-start md:justify-start">
-            <p className="text-heading6 font-bold md:mb-5">Kategori</p>
-            <div className="hidden flex-col gap-2 md:flex">
-              <li className="text-bodyMedium font-normal md:whitespace-nowrap">
-                Digital & Teknologi
-              </li>
-              <li className="text-bodyMedium font-normal md:whitespace-nowrap">Pemasaran</li>
-              <li className="text-bodyMedium font-normal md:whitespace-nowrap">Manajemen Bisnis</li>
-              <li className="text-bodyMedium font-normal md:whitespace-nowrap">
-                Pengembangan Diri
-              </li>
-              <li className="text-bodyMedium font-normal md:whitespace-nowrap">Desain</li>
-            </div>
-            <img
-              className="mr-5 block h-[15px] md:hidden"
-              src="/assets/right-arrow.png"
-              alt="Logo"
-            />
-          </ul>
-          <ul className="flex w-full flex-row justify-between md:flex-col md:items-start md:justify-start">
-            <p className="text-heading6 font-bold md:mb-5">Perusahaan</p>
-            <div className="hidden flex-col gap-2 md:flex">
-              <li className="text-bodyMedium font-normal md:whitespace-nowrap">Tentang Kami</li>
-              <li className="text-bodyMedium font-normal md:whitespace-nowrap">FAQ</li>
-              <li className="text-bodyMedium font-normal md:whitespace-nowrap">
-                Kebijakan Privasi
-              </li>
-              <li className="text-bodyMedium font-normal md:whitespace-nowrap">
-                Ketentuan Layanan
-              </li>
-              <li className="text-bodyMedium font-normal md:whitespace-nowrap">Bantuan</li>
-            </div>
-            <img
-              className="mr-5 block h-[15px] md:hidden"
-              src="/assets/right-arrow.png"
-              alt="Logo"
-            />
-          </ul>
-          <ul className="flex w-full flex-row justify-between md:flex-col md:items-start md:justify-start">
-            <p className="text-heading6 font-bold md:mb-5">Komunitas</p>
-            <div className="hidden flex-col gap-2 md:flex">
-              <li className="text-bodyMedium font-normal md:whitespace-nowrap">Tips Sukses</li>
-              <li className="text-bodyMedium font-normal md:whitespace-nowrap">Blog</li>
-            </div>
-            <img
-              className="mr-5 block h-[15px] md:hidden"
-              src="/assets/right-arrow.png"
-              alt="Logo"
-            />
-          </ul>
+        <div className="m-0 my-5 flex flex-col gap-10 md:flex-row md:items-start md:justify-start">
+          <CategoryComponent title="Kategori" content={kategoriContent} />
+          <CategoryComponent title="Perusahaan" content={perusahaanContent} />
+          <CategoryComponent title="Komunitas" content={komunitasContent} />
         </div>
       </div>
       <DividerUI />
