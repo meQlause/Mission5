@@ -568,8 +568,8 @@ video {
   left: -2.5rem;
 }
 
-.-left-40{
-  left: -10rem;
+.-left-44{
+  left: -11rem;
 }
 
 .right-3{
@@ -586,10 +586,6 @@ video {
 
 .top-full{
   top: 100%;
-}
-
-.-left-44{
-  left: -11rem;
 }
 
 .z-10{
@@ -651,6 +647,10 @@ video {
 
 .mt-1{
   margin-top: 0.25rem;
+}
+
+.mt-10{
+  margin-top: 2.5rem;
 }
 
 .mt-2{

@@ -32,12 +32,12 @@ export const FooterLayout = () => {
   return (
     <footer className="flex flex-col pt-10">
       <div className="flex w-full flex-col justify-between gap-5 pb-3 md:flex-row md:pb-7">
-        <div className="flex flex-col gap-2">
+        <div className="flex max-w-96 flex-col gap-2">
           <img className="h-[52px] max-w-40" src="/assets/logo.png" alt="Logo videobelajar" />
-          <h3 className="text-heading6 font-bold">
+          <h3 className="mt-4 text-heading6 font-bold">
             Gali Potensi Anda Melalui Pembelajaran Video di hariesok.id
           </h3>
-          <div>
+          <div className="mt-1 flex flex-col gap-3">
             <p className="text-bodyMedium font-medium">
               Jl. Usman Effendi No. 50 Lowokwaru, Malang
             </p>
