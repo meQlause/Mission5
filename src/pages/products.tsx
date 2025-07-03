@@ -119,7 +119,7 @@ export const ProductsPage = () => {
     <>
       <HeaderLayout />
       <div className="px-standard flex flex-col gap-5 py-14 md:flex-row">
-        <DefaultLayout className="h-fit w-full max-w-80 rounded-md p-5">
+        <DefaultLayout className="h-fit w-full rounded-md p-5 md:max-w-80">
           <div className="mb-3 flex w-full flex-row items-center justify-between">
             <h6 className="text-heading6 font-bold">Filter</h6>
             <h6 className="text-heading6 font-bold text-red-500">Reset</h6>
@@ -127,7 +127,6 @@ export const ProductsPage = () => {
           <DefaultLayout className="mb-5 w-full rounded-xl p-5">
             <div className="flex flex-col justify-between">
               <CategoryComponent
-                width="max-w-60"
                 title={
                   <div className="flex flex-row items-center gap-3">
                     <img className="h-[18px] w-[20px]" src="/assets/notebook.png" />
@@ -143,7 +142,6 @@ export const ProductsPage = () => {
           <DefaultLayout className="w-full rounded-xl p-5">
             <div className="flex flex-col justify-between">
               <CategoryComponent
-                width="max-w-60"
                 title={
                   <div className="flex flex-row items-center gap-3">
                     <img className="h-[18px] w-[20px]" src="/assets/shopping-bag.png" />
@@ -159,7 +157,6 @@ export const ProductsPage = () => {
           <DefaultLayout className="mt-5 w-full rounded-xl p-5">
             <div className="flex flex-col justify-between">
               <CategoryComponent
-                width="max-w-60"
                 title={
                   <div className="flex flex-row items-center gap-3">
                     <img className="h-[18px] w-[20px]" src="/assets/clock.png" />
@@ -174,7 +171,7 @@ export const ProductsPage = () => {
           </DefaultLayout>
         </DefaultLayout>
         <div className="flex w-full flex-col">
-          <div className="flex flex-row justify-end gap-3" aria-disabled>
+          <div className="flex flex-row justify-center md:justify-end gap-3" aria-disabled>
             <div className="relative">
               <TextInput
                 className="pointer-events-none max-w-36 cursor-default bg-white"
