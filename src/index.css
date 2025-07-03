@@ -838,14 +838,6 @@ video {
   max-width: 10rem;
 }
 
-.max-w-60{
-  max-width: 15rem;
-}
-
-.max-w-80{
-  max-width: 20rem;
-}
-
 .max-w-96{
   max-width: 24rem;
 }
@@ -1459,6 +1451,10 @@ footer {
     width: 600px;
   }
 
+  .md\:max-w-80{
+    max-width: 20rem;
+  }
+
   .md\:cursor-default{
     cursor: default;
   }
@@ -1473,6 +1469,10 @@ footer {
 
   .md\:justify-start{
     justify-content: flex-start;
+  }
+
+  .md\:justify-end{
+    justify-content: flex-end;
   }
 
   .md\:justify-between{
