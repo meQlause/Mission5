@@ -556,6 +556,10 @@ video {
   display: none;
 }
 
+.pointer-events-none{
+  pointer-events: none;
+}
+
 .fixed{
   position: fixed;
 }
@@ -568,10 +572,6 @@ video {
   position: relative;
 }
 
-.sticky{
-  position: sticky;
-}
-
 .-left-10{
   left: -2.5rem;
 }
@@ -580,8 +580,16 @@ video {
   left: 0px;
 }
 
+.right-2{
+  right: 0.5rem;
+}
+
 .right-3{
   right: 0.75rem;
+}
+
+.right-4{
+  right: 1rem;
 }
 
 .top-1\/2{
@@ -592,6 +600,10 @@ video {
   top: 66.666667%;
 }
 
+.top-\[10px\]{
+  top: 10px;
+}
+
 .top-\[83px\]{
   top: 83px;
 }
@@ -600,28 +612,8 @@ video {
   top: 100%;
 }
 
-.top-\[px\]{
-  top: px;
-}
-
-.top-\[30px\]{
-  top: 30px;
-}
-
-.top-\[80px\]{
-  top: 80px;
-}
-
-.top-\[90px\]{
-  top: 90px;
-}
-
-.top-\[85px\]{
-  top: 85px;
-}
-
-.top-\[83px\]{
-  top: 83px;
+.top-\[9px\]{
+  top: 9px;
 }
 
 .z-10{
@@ -838,6 +830,10 @@ video {
   max-width: 7rem;
 }
 
+.max-w-36{
+  max-width: 9rem;
+}
+
 .max-w-40{
   max-width: 10rem;
 }
@@ -865,6 +861,10 @@ video {
 .-translate-y-1\/2{
   --tw-translate-y: -50%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.cursor-default{
+  cursor: default;
 }
 
 .cursor-pointer{
@@ -1242,6 +1242,11 @@ video {
 .text-white{
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+}
+
+.text-black{
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity, 1));
 }
 
 .shadow{
