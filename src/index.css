@@ -556,6 +556,10 @@ video {
   display: none;
 }
 
+.fixed{
+  position: fixed;
+}
+
 .absolute{
   position: absolute;
 }
@@ -564,10 +568,13 @@ video {
   position: relative;
 }
 
+.sticky{
+  position: sticky;
+}
+
 .-left-10{
   left: -2.5rem;
 }
-
 
 .left-0{
   left: 0px;
@@ -585,8 +592,8 @@ video {
   top: 66.666667%;
 }
 
-.top-\[10px\]{
-  top: 10px;
+.top-\[83px\]{
+  top: 83px;
 }
 
 .top-full{
@@ -652,10 +659,6 @@ video {
 
 .mt-1{
   margin-top: 0.25rem;
-}
-
-.mt-10{
-  margin-top: 2.5rem;
 }
 
 .mt-2{
