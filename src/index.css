@@ -556,12 +556,20 @@ video {
   display: none;
 }
 
+.fixed{
+  position: fixed;
+}
+
 .absolute{
   position: absolute;
 }
 
 .relative{
   position: relative;
+}
+
+.sticky{
+  position: sticky;
 }
 
 .-left-10{
@@ -584,8 +592,8 @@ video {
   top: 66.666667%;
 }
 
-.top-\[10px\]{
-  top: 10px;
+.top-\[83px\]{
+  top: 83px;
 }
 
 .top-full{

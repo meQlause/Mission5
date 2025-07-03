@@ -41,7 +41,7 @@ export const HeaderLayout = () => {
       </header>
       {showDropdown && (
         <div
-          className="absolute left-0 top-[83px] w-screen bg-white shadow-lg md:hidden"
+          className="fixed left-0 top-[83px] w-screen bg-white shadow-lg md:hidden"
           style={{ zIndex: 100 }}
         >
           <div
