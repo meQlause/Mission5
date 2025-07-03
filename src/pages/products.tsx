@@ -1,14 +1,13 @@
 import { CategoryComponent } from "../components/category";
 import { CheckboxUI } from "../components/ui/checkbox";
 import { TextInput } from "../components/ui/input";
-import { StarRatingUi } from "../components/ui/stars";
 import { DefaultLayout } from "../layouts/default";
 import { FooterLayout } from "../layouts/footer";
 import { HeaderLayout } from "../layouts/header";
-import { useIsMobile } from "../utils/useIsMobile";
+import { ShowProductComponent } from "../components/showProduct";
+import { PaginationUI } from "../components/ui/pagination";
 
 export const ProductsPage = () => {
-  const isMobile = useIsMobile();
   const categoryContent: Record<string, React.ReactNode> = {
     "1": (
       <div className="ml-1 flex flex-row items-center justify-start gap-5">
@@ -174,7 +173,7 @@ export const ProductsPage = () => {
             </div>
           </DefaultLayout>
         </DefaultLayout>
-        <div className="flex flex-col py-2">
+        <div className="flex w-full flex-col">
           <div className="flex flex-row justify-end gap-3" aria-disabled>
             <div className="relative">
               <TextInput
@@ -189,93 +188,8 @@ export const ProductsPage = () => {
               <img className="absolute right-3 top-[9px]" src="/assets/search.png" />
             </div>
           </div>
-          <div className="mt-5 box-border grid w-full grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-5 py-[20px_10px]">
-            {!isMobile
-              ? contents.map((item) => (
-                  <DefaultLayout className="rounded-md p-7">
-                    <div className="flex flex-col gap-1">
-                      <img
-                        className="mb-5 h-[200px] w-auto rounded-md object-cover"
-                        src={item.contentImage}
-                        alt={item.title}
-                      />
-                      <h3 className="text-heading5 font-bold">{item.title}</h3>
-                      <p className="text-bodyMedium">{item.description}</p>
-                      <div className="mt-5 flex items-center gap-5">
-                        <img className="h-10 w-10 rounded-sm" src={item.avatar} alt={item.name} />
-                        <div className="flex flex-col">
-                          <h4 className="text-heading6 font-bold">{item.name}</h4>
-                          <p className="text-bodyMedium font-medium">
-                            Senior accountant di <strong>Gojek</strong>
-                          </p>
-                        </div>
-                      </div>
-                      <div className="mt-5 flex flex-row items-center justify-between">
-                        <div className="flex flex-row items-center gap-2">
-                          <StarRatingUi rating={item.rating} size={20} />
-                          <p className="text-bodyMedium font-medium">
-                            {item.rating} ({item.reviewCount})
-                          </p>
-                        </div>
-                        <p className="text-heading4 font-bold text-[#3ECF4C]">{item.price}</p>
-                      </div>
-                    </div>
-                  </DefaultLayout>
-                ))
-              : contents.map((item) => (
-                  <DefaultLayout className="rounded-md p-4">
-                    <div className="flex flex-row gap-3">
-                      <img
-                        className="h-[86px] w-[85px] rounded-md object-cover"
-                        src={item.contentImage}
-                        alt={item.title}
-                      />
-                      <div className="flex flex-col justify-between">
-                        <h3 className="text-heading6 font-bold">{item.title}</h3>
-                        <div className="flex items-center gap-3">
-                          <img className="h-8 w-8 rounded-sm" src={item.avatar} alt={item.name} />
-                          <div className="flex flex-col">
-                            <h4 className="text-bodyMedium font-bold">{item.name}</h4>
-                            <p className="text-bodySmall font-medium">Senior accountant</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="mt-2 flex flex-row items-center justify-between">
-                      <div className="flex flex-row items-center gap-2">
-                        <StarRatingUi rating={item.rating} size={20} />
-                        <p className="text-bodyMedium font-medium">
-                          {item.rating} ({item.reviewCount})
-                        </p>
-                      </div>
-                      <p className="text-heading4 font-bold text-[#3ECF4C]">{item.price}</p>
-                    </div>
-                  </DefaultLayout>
-                ))}
-          </div>
-          <div className="flex flex-row justify-end gap-2 pt-8">
-            <div className="flex h-[40px] w-[40px] items-center justify-center rounded-md bg-[#F4F5FA]">
-              <img src="/assets/keyboard-arrow-left.png" />
-            </div>
-            <div className="flex h-[40px] w-[40px] items-center justify-center rounded-md bg-transparent bg-yellow-300 text-white">
-              1
-            </div>
-            <div className="flex h-[40px] w-[40px] items-center justify-center rounded-md bg-transparent">
-              2
-            </div>
-            <div className="flex h-[40px] w-[40px] items-center justify-center rounded-md bg-transparent">
-              3
-            </div>
-            <div className="flex h-[40px] w-[40px] items-center justify-center rounded-md bg-transparent">
-              4
-            </div>
-            <div className="flex h-[40px] w-[40px] items-center justify-center rounded-md bg-transparent">
-              5
-            </div>
-            <div className="flex h-[40px] w-[40px] items-center justify-center rounded-md bg-[#F4F5FA]">
-              <img src="/assets/keyboard-arrow-right.png" />
-            </div>
-          </div>
+          <ShowProductComponent contents={contents} />
+          <PaginationUI />
         </div>
       </div>
       <FooterLayout />
