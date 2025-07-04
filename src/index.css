@@ -673,6 +673,10 @@ video {
   margin-top: 0.25rem;
 }
 
+.mt-10{
+  margin-top: 2.5rem;
+}
+
 .mt-2{
   margin-top: 0.5rem;
 }
@@ -802,12 +806,20 @@ video {
   width: 2rem;
 }
 
+.w-\[12px\]{
+  width: 12px;
+}
+
 .w-\[18px\]{
   width: 18px;
 }
 
 .w-\[20px\]{
   width: 20px;
+}
+
+.w-\[351px\]{
+  width: 351px;
 }
 
 .w-\[40px\]{
@@ -834,6 +846,10 @@ video {
   min-width: 200px;
 }
 
+.min-w-\[350px\]{
+  min-width: 350px;
+}
+
 .max-w-24{
   max-width: 6rem;
 }
@@ -850,10 +866,6 @@ video {
   max-width: 10rem;
 }
 
-.max-w-80{
-  max-width: 20rem;
-}
-
 .max-w-96{
   max-width: 24rem;
 }
@@ -864,6 +876,10 @@ video {
 
 .max-w-\[400px\]{
   max-width: 400px;
+}
+
+.max-w-\[770px\]{
+  max-width: 770px;
 }
 
 .-translate-y-1\/2{
@@ -930,6 +946,10 @@ video {
 
 .justify-between{
   justify-content: space-between;
+}
+
+.justify-evenly{
+  justify-content: space-evenly;
 }
 
 .gap-0{
@@ -1070,16 +1090,6 @@ video {
   background-color: rgb(255 189 58 / var(--tw-bg-opacity, 1));
 }
 
-.bg-blue-200{
-  --tw-bg-opacity: 1;
-  background-color: rgb(191 219 254 / var(--tw-bg-opacity, 1));
-}
-
-.bg-green-200{
-  --tw-bg-opacity: 1;
-  background-color: rgb(187 247 208 / var(--tw-bg-opacity, 1));
-}
-
 .bg-transparent{
   background-color: transparent;
 }
@@ -1087,11 +1097,6 @@ video {
 .bg-white{
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
-}
-
-.bg-yellow-200{
-  --tw-bg-opacity: 1;
-  background-color: rgb(254 240 138 / var(--tw-bg-opacity, 1));
 }
 
 .bg-yellow-300{
@@ -1108,8 +1113,8 @@ video {
   padding: 0.25rem;
 }
 
-.p-2{
-  padding: 0.5rem;
+.p-3{
+  padding: 0.75rem;
 }
 
 .p-4{
@@ -1216,6 +1221,11 @@ video {
   font-family: Lato, sans-serif;
 }
 
+.text-bodyLarge{
+  font-size: 18px;
+  line-height: 28px;
+}
+
 .text-bodyMedium{
   font-size: 16px;
   line-height: 24px;
@@ -1298,6 +1308,11 @@ video {
 .text-gray-400{
   --tw-text-opacity: 1;
   color: rgb(156 163 175 / var(--tw-text-opacity, 1));
+}
+
+.text-gray-500{
+  --tw-text-opacity: 1;
+  color: rgb(107 114 128 / var(--tw-text-opacity, 1));
 }
 
 .text-gray-700{
@@ -1531,6 +1546,10 @@ footer {
 
   .md\:flex-row{
     flex-direction: row;
+  }
+
+  .md\:flex-row-reverse{
+    flex-direction: row-reverse;
   }
 
   .md\:items-start{
