@@ -1,7 +1,7 @@
 import type { InputProps } from "../../utils/interfaces";
 import { useState } from "react";
 
-export const InputComponent = ({
+export const InputComponent: React.FC<InputProps> = ({
   type,
   label,
   error,
@@ -9,7 +9,7 @@ export const InputComponent = ({
   className = "",
   placeholder = "",
   ...props
-}: InputProps) => {
+}) => {
   const [showPassword, setShowPassword] = useState(false);
   const isPassword = type === "password";
   const inputType = isPassword && showPassword ? "text" : type;

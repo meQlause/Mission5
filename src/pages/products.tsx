@@ -1,11 +1,11 @@
 import { CategoryComponent } from "../components/category";
-import { CheckboxUI } from "../components/ui/checkbox";
-import { TextInput } from "../components/ui/input";
+import { CheckboxUI } from "../components/UIs/checkbox";
+import { TextInput } from "../components/UIs/input";
 import { DefaultLayout } from "../layouts/default";
 import { FooterLayout } from "../layouts/footer";
 import { HeaderLayout } from "../layouts/header";
 import { ShowProductComponent } from "../components/showProduct";
-import { PaginationUI } from "../components/ui/pagination";
+import { PaginationUI } from "../components/UIs/pagination";
 
 export const ProductsPage = () => {
   const categoryContent: Record<string, React.ReactNode> = {
@@ -171,7 +171,7 @@ export const ProductsPage = () => {
           </DefaultLayout>
         </DefaultLayout>
         <div className="flex w-full flex-col">
-          <div className="flex flex-row justify-center md:justify-end gap-3" aria-disabled>
+          <div className="flex flex-row justify-center gap-3 md:justify-end" aria-disabled>
             <div className="relative">
               <TextInput
                 className="pointer-events-none max-w-36 cursor-default bg-white"

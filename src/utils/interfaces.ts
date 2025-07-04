@@ -25,3 +25,7 @@ export interface InputProps {
   className?: string;
   [key: string]: any;
 }
+
+export interface showProductProps {
+  contents: Record<string, any>[];
+}

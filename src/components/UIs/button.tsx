@@ -20,7 +20,7 @@ const variantStyles = {
   },
 };
 
-export const ButtonComponent: React.FC<ButtonProps> = ({
+export const ButtonUI: React.FC<ButtonProps> = ({
   variant = "primary",
   fullWidth = true,
   children,

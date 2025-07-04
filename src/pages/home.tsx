@@ -1,11 +1,12 @@
 import { useRef } from "react";
-import { ButtonComponent } from "../components/ui/button";
-import { DividerUI } from "../components/ui/divider";
-import { TextInput } from "../components/ui/input";
+import { ButtonUI } from "../components/UIs/button";
+import { DividerUI } from "../components/UIs/divider";
+import { TextInput } from "../components/UIs/input";
 import { HeaderLayout } from "../layouts/header";
 import { mousePointerTracking, touchTracking } from "../utils/funtions";
 import { FooterLayout } from "../layouts/footer";
 import { ShowProductComponent } from "../components/showProduct";
+import { ImageAsBackgroudUI } from "../components/UIs/imageAsBackground";
 
 export const HomePage = () => {
   const ulRef = useRef<HTMLUListElement>(null);
@@ -133,12 +134,8 @@ export const HomePage = () => {
     <>
       <HeaderLayout />
       <div className="px-standard flex flex-col gap-16 py-14">
-        <div className="relative mx-auto h-fit max-w-[1100px]">
-          <img
-            src="/assets/hero.jpg"
-            className="absolute z-10 h-full w-full overflow-hidden rounded-xl object-cover brightness-[.3]"
-          />
-          <div className="flex w-full flex-col items-center justify-center gap-5 px-4 py-10 md:px-20 lg:px-40">
+        <ImageAsBackgroudUI src="/assets/hero.jpg">
+          <div className="flex flex-col items-center justify-center gap-5 px-4 py-10 md:px-20 lg:px-40">
             <h1 className="z-20 text-center text-heading3 font-bold text-white md:text-heading1">
               Revolusi Pembelajaran: Temukan Ilmu Baru melalui Platform Video Interaktif!
             </h1>
@@ -147,11 +144,11 @@ export const HomePage = () => {
               berkualitas tinggi. Tidak hanya itu, Anda juga dapat berpartisipasi dalam latihan
               interaktif yang akan meningkatkan pemahaman Anda.
             </p>
-            <ButtonComponent className="z-20 mt-4 max-w-96 px-2 py-3 text-bodySmall md:mt-5 md:text-bodyMedium">
+            <ButtonUI className="z-20 mt-4 max-w-96 px-2 py-3 text-bodySmall md:mt-5 md:text-bodyMedium">
               Temukan Video Course untuk Dipelajari!
-            </ButtonComponent>
+            </ButtonUI>
           </div>
-        </div>
+        </ImageAsBackgroudUI>
 
         <div className="flex flex-col gap-3">
           <h2 className="text-heading3 font-bold">Koleksi Video Pembelajaran Unggulan</h2>
@@ -189,12 +186,8 @@ export const HomePage = () => {
           <ShowProductComponent contents={contents} />
         </div>
       </div>
-      <div className="relative mx-auto h-fit max-w-[1100px]">
-        <img
-          src="/assets/hero.jpg"
-          className="absolute z-10 h-full w-full overflow-hidden rounded-xl object-cover brightness-[.3]"
-        />
-        <div className="flex w-full flex-col items-center justify-center gap-5 px-4 py-10 md:px-10 lg:px-40">
+      <ImageAsBackgroudUI src="/assets/hero.jpg">
+        <div className="flex flex-col items-center justify-center gap-5 px-4 py-10 md:px-10 lg:px-40">
           <h6 className="z-10 text-white">NEWSLETTER</h6>
           <h1 className="z-20 text-center text-heading3 font-bold text-white md:text-heading1">
             Mau Belajar Lebih Banyak?
@@ -205,15 +198,15 @@ export const HomePage = () => {
           </p>
           <div className="relative w-full max-w-[400px]">
             <TextInput placeholder="Masukan Emailmu" label="Email" className="z-10 w-full py-3" />
-            <ButtonComponent
+            <ButtonUI
               variant="quaternary"
               className="absolute right-3 top-2/3 z-10 max-w-28 -translate-y-1/2 text-gray-400 hover:text-gray-600 focus:outline-none"
             >
               Subscribe
-            </ButtonComponent>
+            </ButtonUI>
           </div>
         </div>
-      </div>
+      </ImageAsBackgroudUI>
       <FooterLayout />
     </>
   );

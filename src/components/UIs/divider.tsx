@@ -1,11 +1,9 @@
-export const DividerUI = ({
+import type { DividerProps } from "../../utils/types";
+
+export const DividerUI: React.FC<DividerProps> = ({
   width = "100%",
   color = "#CCCCC",
   thick = "1px",
-}: {
-  width?: string;
-  color?: string;
-  thick?: string;
 }) => {
   return (
     <div

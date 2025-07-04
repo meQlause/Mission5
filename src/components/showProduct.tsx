@@ -1,12 +1,9 @@
 import { DefaultLayout } from "../layouts/default";
+import type { showProductProps } from "../utils/interfaces";
 import { useIsMobile } from "../utils/useIsMobile";
-import { StarRatingUi } from "./ui/stars";
+import { StarRatingUi } from "./UIs/stars";
 
-interface showProductProps {
-  contents: Record<string, any>[];
-}
-
-export const ShowProductComponent = ({ contents }: showProductProps) => {
+export const ShowProductComponent: React.FC<showProductProps> = ({ contents }) => {
   const isMobile = useIsMobile();
   return (
     <div className="mt-5 box-border grid w-full grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-5 py-[20px_10px]">
