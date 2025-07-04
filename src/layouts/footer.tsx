@@ -1,5 +1,5 @@
 import { CategoryComponent } from "../components/category";
-import { DividerUI } from "../components/ui/divider";
+import { DividerUI } from "../components/UIs/divider";
 
 const kategoriContent: Record<string, React.ReactNode> = {
   "1": <>Digital & Teknologi</>,

@@ -1,8 +1,8 @@
 import type { FormProps } from "../utils/interfaces";
 import type { LoginFormValues, Props, RegisterFormValues, Variant } from "../utils/types";
-import { ButtonComponent } from "./ui/button";
-import { DividerUI } from "./ui/divider";
-import { EmailInput, PasswordInput, PhoneInput, TextInput } from "./ui/input";
+import { ButtonUI } from "./UIs/button";
+import { DividerUI } from "./UIs/divider";
+import { EmailInput, PasswordInput, PhoneInput, TextInput } from "./UIs/input";
 import { useForm } from "react-hook-form";
 
 export const FormComponent = ({
@@ -77,17 +77,17 @@ export const FormComponent = ({
       )}
 
       <div className="flex flex-col gap-4 pt-2">
-        <ButtonComponent variant="primary">{isRegister ? "Daftar" : "Masuk"}</ButtonComponent>
-        <ButtonComponent variant="secondary">{isRegister ? "Masuk" : "Daftar"}</ButtonComponent>
+        <ButtonUI variant="primary">{isRegister ? "Daftar" : "Masuk"}</ButtonUI>
+        <ButtonUI variant="secondary">{isRegister ? "Masuk" : "Daftar"}</ButtonUI>
 
         <DividerUI />
 
-        <ButtonComponent className="border border-gray-200" variant="tertiary">
+        <ButtonUI className="border border-gray-200" variant="tertiary">
           <div className="m-auto flex flex-row items-center justify-center gap-3">
             <img src="/assets/google-icon.png" />
             {isRegister ? "Daftar Dengan Google" : "Masuk Dengan Google"}
           </div>
-        </ButtonComponent>
+        </ButtonUI>
       </div>
     </form>
   );
