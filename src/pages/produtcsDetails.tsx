@@ -103,7 +103,7 @@ export const ProductsDetailsPage = () => {
             <DefaultLayout className="rounded-lg p-5 py-10">
               <div className="flex flex-col gap-3">
                 <h2 className="text-heading6 font-bold">Belajar Bersama Tutor Professional</h2>
-                <div className="flex-col justify-evenly gap-5 md:flex-row">
+                <div className="flex flex-col justify-evenly gap-5 md:flex-row">
                   <DefaultLayout className="flex flex-col gap-2 rounded-lg p-5">
                     <div className="flex flex-row items-center justify-start gap-2">
                       <img className="h-10 w-10 rounded-lg" src="/assets/contents/avatar1.png" />

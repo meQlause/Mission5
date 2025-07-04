@@ -572,10 +572,6 @@ video {
   position: relative;
 }
 
-.sticky{
-  position: sticky;
-}
-
 .-left-10{
   left: -2.5rem;
 }
@@ -1550,10 +1546,6 @@ footer {
 
   .md\:flex-row{
     flex-direction: row;
-  }
-
-  .md\:flex-row-reverse{
-    flex-direction: row-reverse;
   }
 
   .md\:items-start{
