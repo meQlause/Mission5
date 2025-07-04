@@ -2,15 +2,12 @@ import { useRef } from "react";
 import { ButtonComponent } from "../components/ui/button";
 import { DividerUI } from "../components/ui/divider";
 import { TextInput } from "../components/ui/input";
-import { StarRatingUi } from "../components/ui/stars";
-import { DefaultLayout } from "../layouts/default";
 import { HeaderLayout } from "../layouts/header";
 import { mousePointerTracking, touchTracking } from "../utils/funtions";
-import { useIsMobile } from "../utils/useIsMobile";
 import { FooterLayout } from "../layouts/footer";
+import { ShowProductComponent } from "../components/showProduct";
 
 export const HomePage = () => {
-  const isMobile = useIsMobile();
   const ulRef = useRef<HTMLUListElement>(null);
   const contents = [
     {
@@ -189,95 +186,31 @@ export const HomePage = () => {
             )}
           </ul>
           <DividerUI width="5%" color="#dc2626" thick="5px" />
-
-          <div className="mt-5 box-border grid w-full grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-5 py-[20px_10px]">
-            {!isMobile
-              ? contents.map((item) => (
-                  <DefaultLayout className="rounded-md p-7">
-                    <div className="flex flex-col gap-1">
-                      <img
-                        className="mb-5 h-[200px] w-auto rounded-md object-cover"
-                        src={item.contentImage}
-                        alt={item.title}
-                      />
-                      <h3 className="text-heading5 font-bold">{item.title}</h3>
-                      <p className="text-bodyMedium">{item.description}</p>
-                      <div className="mt-5 flex items-center gap-5">
-                        <img className="h-10 w-10 rounded-sm" src={item.avatar} alt={item.name} />
-                        <div className="flex flex-col">
-                          <h4 className="text-heading6 font-bold">{item.name}</h4>
-                          <p className="text-bodyMedium font-medium">
-                            Senior accountant di <strong>Gojek</strong>
-                          </p>
-                        </div>
-                      </div>
-                      <div className="mt-5 flex flex-row items-center justify-between">
-                        <div className="flex flex-row items-center gap-2">
-                          <StarRatingUi rating={item.rating} size={20} />
-                          <p className="text-bodyMedium font-medium">
-                            {item.rating} ({item.reviewCount})
-                          </p>
-                        </div>
-                        <p className="text-heading4 font-bold text-[#3ECF4C]">{item.price}</p>
-                      </div>
-                    </div>
-                  </DefaultLayout>
-                ))
-              : contents.map((item) => (
-                  <DefaultLayout className="rounded-md p-4">
-                    <div className="flex flex-row gap-3">
-                      <img
-                        className="h-[86px] w-[85px] rounded-md object-cover"
-                        src={item.contentImage}
-                        alt={item.title}
-                      />
-                      <div className="flex flex-col justify-between">
-                        <h3 className="text-heading6 font-bold">{item.title}</h3>
-                        <div className="flex items-center gap-3">
-                          <img className="h-8 w-8 rounded-sm" src={item.avatar} alt={item.name} />
-                          <div className="flex flex-col">
-                            <h4 className="text-bodyMedium font-bold">{item.name}</h4>
-                            <p className="text-bodySmall font-medium">Senior accountant</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="mt-2 flex flex-row items-center justify-between">
-                      <div className="flex flex-row items-center gap-2">
-                        <StarRatingUi rating={item.rating} size={20} />
-                        <p className="text-bodyMedium font-medium">
-                          {item.rating} ({item.reviewCount})
-                        </p>
-                      </div>
-                      <p className="text-heading4 font-bold text-[#3ECF4C]">{item.price}</p>
-                    </div>
-                  </DefaultLayout>
-                ))}
-          </div>
+          <ShowProductComponent contents={contents} />
         </div>
-        <div className="relative mx-auto h-fit max-w-[1100px]">
-          <img
-            src="/assets/hero.jpg"
-            className="absolute z-10 h-full w-full overflow-hidden rounded-xl object-cover brightness-[.3]"
-          />
-          <div className="flex w-full flex-col items-center justify-center gap-5 px-4 py-10 md:px-10 lg:px-40">
-            <h6 className="z-10 text-white">NEWSLETTER</h6>
-            <h1 className="z-20 text-center text-heading3 font-bold text-white md:text-heading1">
-              Mau Belajar Lebih Banyak?
-            </h1>
-            <p className="z-20 text-center font-sans text-bodySmall font-light text-white md:text-bodyMedium">
-              Daftarkan dirimu untuk mendapatkan informasi terbaru dan penawaran spesial dari
-              program-program terbaik hariesok.id
-            </p>
-            <div className="relative w-full max-w-[400px]">
-              <TextInput placeholder="Masukan Emailmu" label="Email" className="z-10 w-full py-3" />
-              <ButtonComponent
-                variant="quaternary"
-                className="absolute right-3 top-2/3 z-10 max-w-28 -translate-y-1/2 text-gray-400 hover:text-gray-600 focus:outline-none"
-              >
-                Subscribe
-              </ButtonComponent>
-            </div>
+      </div>
+      <div className="relative mx-auto h-fit max-w-[1100px]">
+        <img
+          src="/assets/hero.jpg"
+          className="absolute z-10 h-full w-full overflow-hidden rounded-xl object-cover brightness-[.3]"
+        />
+        <div className="flex w-full flex-col items-center justify-center gap-5 px-4 py-10 md:px-10 lg:px-40">
+          <h6 className="z-10 text-white">NEWSLETTER</h6>
+          <h1 className="z-20 text-center text-heading3 font-bold text-white md:text-heading1">
+            Mau Belajar Lebih Banyak?
+          </h1>
+          <p className="z-20 text-center font-sans text-bodySmall font-light text-white md:text-bodyMedium">
+            Daftarkan dirimu untuk mendapatkan informasi terbaru dan penawaran spesial dari
+            program-program terbaik hariesok.id
+          </p>
+          <div className="relative w-full max-w-[400px]">
+            <TextInput placeholder="Masukan Emailmu" label="Email" className="z-10 w-full py-3" />
+            <ButtonComponent
+              variant="quaternary"
+              className="absolute right-3 top-2/3 z-10 max-w-28 -translate-y-1/2 text-gray-400 hover:text-gray-600 focus:outline-none"
+            >
+              Subscribe
+            </ButtonComponent>
           </div>
         </div>
       </div>

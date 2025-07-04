@@ -556,6 +556,10 @@ video {
   display: none;
 }
 
+.pointer-events-none{
+  pointer-events: none;
+}
+
 .fixed{
   position: fixed;
 }
@@ -580,6 +584,10 @@ video {
   left: 0px;
 }
 
+.right-2{
+  right: 0.5rem;
+}
+
 .right-3{
   right: 0.75rem;
 }
@@ -594,6 +602,10 @@ video {
 
 .top-\[83px\]{
   top: 83px;
+}
+
+.top-\[9px\]{
+  top: 9px;
 }
 
 .top-full{
@@ -733,6 +745,10 @@ video {
   height: 200px;
 }
 
+.h-\[40px\]{
+  height: 40px;
+}
+
 .h-\[45px\]{
   height: 45px;
 }
@@ -790,6 +806,10 @@ video {
   width: 20px;
 }
 
+.w-\[40px\]{
+  width: 40px;
+}
+
 .w-\[85px\]{
   width: 85px;
 }
@@ -814,16 +834,12 @@ video {
   max-width: 7rem;
 }
 
+.max-w-36{
+  max-width: 9rem;
+}
+
 .max-w-40{
   max-width: 10rem;
-}
-
-.max-w-60{
-  max-width: 15rem;
-}
-
-.max-w-80{
-  max-width: 20rem;
 }
 
 .max-w-96{
@@ -841,6 +857,10 @@ video {
 .-translate-y-1\/2{
   --tw-translate-y: -50%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.cursor-default{
+  cursor: default;
 }
 
 .cursor-pointer{
@@ -1015,14 +1035,28 @@ video {
   background-color: #E2FCD9CC;
 }
 
+.bg-\[\#F4F5FA\]{
+  --tw-bg-opacity: 1;
+  background-color: rgb(244 245 250 / var(--tw-bg-opacity, 1));
+}
+
 .bg-\[\#f4f5fa\]{
   --tw-bg-opacity: 1;
   background-color: rgb(244 245 250 / var(--tw-bg-opacity, 1));
 }
 
+.bg-transparent{
+  background-color: transparent;
+}
+
 .bg-white{
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
+}
+
+.bg-yellow-300{
+  --tw-bg-opacity: 1;
+  background-color: rgb(253 224 71 / var(--tw-bg-opacity, 1));
 }
 
 .object-cover{
@@ -1120,6 +1154,10 @@ video {
 
 .pt-6{
   padding-top: 1.5rem;
+}
+
+.pt-8{
+  padding-top: 2rem;
 }
 
 .text-center{
@@ -1417,6 +1455,10 @@ footer {
     width: 600px;
   }
 
+  .md\:max-w-80{
+    max-width: 20rem;
+  }
+
   .md\:cursor-default{
     cursor: default;
   }
@@ -1431,6 +1473,10 @@ footer {
 
   .md\:justify-start{
     justify-content: flex-start;
+  }
+
+  .md\:justify-end{
+    justify-content: flex-end;
   }
 
   .md\:justify-between{
