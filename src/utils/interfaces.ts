@@ -1,5 +1,5 @@
 import type { UseFormRegisterReturn } from "react-hook-form";
-import type { ButtonVariant, InputType } from "./types";
+import type { ButtonVariant, InputType, VideoDetails } from "./types";
 import type { ReactNode, FormHTMLAttributes } from "react";
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -14,7 +14,7 @@ export interface DefaultLayoutProps {
 
 export interface FormProps extends FormHTMLAttributes<HTMLFormElement> {
   className?: string;
-  onSubmit: () => void | Promise<void>;
+  onSubmit?: any;
 }
 
 export interface InputProps {
@@ -24,6 +24,12 @@ export interface InputProps {
   registration?: Partial<UseFormRegisterReturn>;
   className?: string;
   [key: string]: any;
+}
+
+export interface CourseDetailsProps {
+  header: string;
+  isShow?: boolean;
+  subHeader: Record<string, VideoDetails>;
 }
 
 export interface showProductProps {

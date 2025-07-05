@@ -1,3 +1,4 @@
+import { CourseDetailsComponent } from "../components/courseDetails";
 import { ShowProductComponent } from "../components/showProduct";
 import { ButtonUI } from "../components/UIs/button";
 import { DividerUI } from "../components/UIs/divider";
@@ -6,6 +7,7 @@ import { StarRatingUi } from "../components/UIs/stars";
 import { DefaultLayout } from "../layouts/default";
 import { FooterLayout } from "../layouts/footer";
 import { HeaderLayout } from "../layouts/header";
+import type { CourseDetailsProps } from "../utils/interfaces";
 
 export const ProductsDetailsPage = () => {
   const contents = [
@@ -49,6 +51,82 @@ export const ProductsDetailsPage = () => {
       price: "Rp 300K",
     },
   ];
+
+  const courseDetails: CourseDetailsProps[] = [
+    {
+      header: "Course 1: Foundation of User Experience Design",
+      subHeader: {
+        "The basics of user experience design": {
+          kind: "video",
+          duration: "12 Menit",
+        },
+        "Understanding user needs": {
+          kind: "video",
+          duration: "15 Menit",
+        },
+        "UX principles and heuristics": {
+          kind: "video",
+          duration: "10 Menit",
+        },
+      },
+    },
+    {
+      header: "Course 2: UX Research Methods",
+      subHeader: {
+        "Introduction to UX research": {
+          kind: "video",
+          duration: "14 Menit",
+        },
+        "Conducting interviews and surveys": {
+          kind: "video",
+          duration: "18 Menit",
+        },
+        "Analyzing research data": {
+          kind: "video",
+          duration: "20 Menit",
+        },
+      },
+    },
+    {
+      header: "Course 3: Wireframing and Prototyping",
+      subHeader: {
+        "Creating wireframes": {
+          kind: "video",
+          duration: "16 Menit",
+        },
+        "Low vs high fidelity prototypes": {
+          kind: "video",
+          duration: "13 Menit",
+        },
+        "Tools for prototyping": {
+          kind: "video",
+          duration: "17 Menit",
+        },
+        "Interactive prototype testing": {
+          kind: "video",
+          duration: "11 Menit",
+        },
+      },
+    },
+    {
+      header: "Course 4: Usability Testing and Iteration",
+      subHeader: {
+        "Usability testing fundamentals": {
+          kind: "video",
+          duration: "15 Menit",
+        },
+        "Planning and conducting usability tests": {
+          kind: "video",
+          duration: "19 Menit",
+        },
+        "Analyzing and iterating on feedback": {
+          kind: "video",
+          duration: "14 Menit",
+        },
+      },
+    },
+  ];
+
   return (
     <>
       <HeaderLayout />
@@ -145,80 +223,15 @@ export const ProductsDetailsPage = () => {
             {/* Course Details */}
             <DefaultLayout className="rounded-lg p-5">
               <div className="flex flex-col gap-5">
-                <h2 className="text-heading6 font-bold">Kamu akan Mempelajari</h2>
+                <h2 className="mb-3 text-heading6 font-bold">Kamu akan Mempelajari</h2>
                 <div className="flex flex-col gap-3">
-                  <div className="flex flex-row items-center justify-between">
-                    <h3 className="text-bodyLarge font-bold text-[#3ECF4C]">
-                      Introduction to Course 1: Foundation of User Experience Design
-                    </h3>
-                    <img className="h-[15px] w-[12px]" src="/assets/right-arrow.png" />
-                  </div>
-                  <div className="flex justify-between rounded-md border p-3">
-                    The basic of user experience design
-                    <div className="hidden gap-5 md:flex">
-                      <div className="flex flex-row gap-2">
-                        <img src="/assets/play.png" />
-                        <span>Video</span>
-                      </div>
-                      <div className="flex flex-row gap-2">
-                        <img src="/assets/clock-black.png" />
-                        <span>12 Menit</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="flex justify-between rounded-md border p-3">
-                    Jobs in the field of user experience
-                    <div className="hidden gap-5 md:flex">
-                      <div className="flex flex-row gap-2">
-                        <img src="/assets/play.png" />
-                        <span>Video</span>
-                      </div>
-                      <div className="flex flex-row gap-2">
-                        <img src="/assets/clock-black.png" />
-                        <span>12 Menit</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="flex justify-between rounded-md border p-3">
-                    The product development life cycle
-                    <div className="hidden gap-5 md:flex">
-                      <div className="flex flex-row gap-2">
-                        <img src="/assets/play.png" />
-                        <span>Video</span>
-                      </div>
-                      <div className="flex flex-row gap-2">
-                        <img src="/assets/clock-black.png" />
-                        <span>12 Menit</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="flex flex-col gap-3">
-                  <div className="flex flex-row items-center justify-between">
-                    <h3 className="text-bodyLarge font-bold text-[#3ECF4C]">
-                      Universal design, inclusive design, and equity-focused design
-                    </h3>
-                    <img className="h-[15px] w-[12px]" src="/assets/right-arrow.png" />
-                  </div>
-                </div>
-
-                <div className="flex flex-col gap-3">
-                  <div className="flex flex-row items-center justify-between">
-                    <h3 className="text-bodyLarge font-bold text-[#3ECF4C]">
-                      Introduction to design sprints
-                    </h3>
-                    <img className="h-[15px] w-[12px]" src="/assets/right-arrow.png" />
-                  </div>
-                </div>
-
-                <div className="flex flex-col gap-3">
-                  <div className="flex flex-row items-center justify-between">
-                    <h3 className="text-bodyLarge font-bold text-[#3ECF4C]">
-                      Introduction to UX Research
-                    </h3>
-                    <img className="h-[15px] w-[12px]" src="/assets/right-arrow.png" />
-                  </div>
+                  {courseDetails.map((value, index) => (
+                    <CourseDetailsComponent
+                      header={value.header}
+                      subHeader={value.subHeader}
+                      isShow={index === 0 && true}
+                    />
+                  ))}
                 </div>
               </div>
             </DefaultLayout>
@@ -288,7 +301,7 @@ export const ProductsDetailsPage = () => {
             <div className="flex flex-row items-center justify-between">
               <div className="flex flex-row items-start gap-2">
                 <p className="text-bodyMedium font-bold text-[#3ECF4C]">Rp 250K</p>
-                <p className="text-bodyMediumfont-bold text-[#7b7c7b] line-through">Rp 250K</p>
+                <p className="text-bodyMediumfont-bold text-[#7b7c7b] line-through">Rp 500K</p>
               </div>
               <div className="max-w-24 rounded-md bg-[#ffbd3a] p-1 text-bodySmall font-thin text-white">
                 Diskon 50%

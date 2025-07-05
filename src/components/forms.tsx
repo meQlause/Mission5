@@ -1,7 +1,6 @@
 import type { FormProps } from "../utils/interfaces";
 import type { LoginFormValues, Props, RegisterFormValues, Variant } from "../utils/types";
 import { ButtonUI } from "./UIs/button";
-import { DividerUI } from "./UIs/divider";
 import { EmailInput, PasswordInput, PhoneInput, TextInput } from "./UIs/input";
 import { useForm } from "react-hook-form";
 
@@ -21,8 +20,8 @@ export const FormComponent = ({
 
   return (
     <form
-      onSubmit={handleSubmit((data) => console.log(data))}
-      className={`space-y-4 ${className}`}
+      onSubmit={handleSubmit((data) => onSubmit?.(data))}
+      className={`flex flex-col gap-3 ${className}`}
       {...props}
     >
       {isRegister && (
@@ -69,24 +68,15 @@ export const FormComponent = ({
       )}
 
       {!isRegister && (
-        <div className="mt-2 flex justify-end">
+        <div className="flex justify-end">
           <a className="font-sans text-bodySmall text-[#4A505C]" href="#">
             Lupa password?
           </a>
         </div>
       )}
-
-      <div className="flex flex-col gap-4 pt-2">
-        <ButtonUI variant="primary">{isRegister ? "Daftar" : "Masuk"}</ButtonUI>
-        <ButtonUI variant="secondary">{isRegister ? "Masuk" : "Daftar"}</ButtonUI>
-
-        <DividerUI />
-
-        <ButtonUI className="border border-gray-200" variant="tertiary">
-          <div className="m-auto flex flex-row items-center justify-center gap-3">
-            <img src="/assets/google-icon.png" />
-            {isRegister ? "Daftar Dengan Google" : "Masuk Dengan Google"}
-          </div>
+      <div className="mt-3">
+        <ButtonUI variant="primary" type="submit">
+          {isRegister ? "Daftar" : "Masuk"}
         </ButtonUI>
       </div>
     </form>

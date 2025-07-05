@@ -10,7 +10,7 @@ export type LoginFormValues = {
 export type ImageProps = {
   children: React.ReactNode;
   src: string;
-  className?: string
+  className?: string;
 };
 
 export type DividerProps = {
@@ -43,4 +43,9 @@ export type RegisterFormValues = {
 
 export type Props = {
   variant?: Variant;
+};
+
+export type VideoDetails = {
+  duration: string;
+  kind: "video" | "quiz";
 };
